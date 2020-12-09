@@ -5,9 +5,6 @@ def motAuHasard (tableauMots):
     motATrouver = tableauMots[i]
     return motATrouver
 
-print(motAuHasard(tableauMots))
-input()
-
 
 def chercheDansMot(mot, lettreCherchee):
     for i in range(len(mot)):
@@ -22,6 +19,17 @@ def nombreFoisDansMot(mot, lettreCherchee):
         if lettreCherchee == mot[i]:
             apparition = apparition+1
     return apparition
+
+
+def devineMot():
+    guess = "guess"
+    while len(guess) != 6:
+        guess = input("Proposez un mot de 6 lettres : ")
+        if len(guess) > 6:
+            print("Votre mot fait plus de 6 lettres.")
+        if len(guess) < 6:
+            print("Votre mot fait moins de 6 lettres.")
+    return guess
 
 #MAIN PROGRAMME
 #def 1

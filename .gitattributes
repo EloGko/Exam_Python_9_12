@@ -1,18 +1,22 @@
 # FONCTIONS
 
+#1
+#Une fonction qui choisit au hasard un mot parmis 10 mots.
 def motAuHasard (tableauMots):
     i = random.randint(0,9)
     motATrouver = tableauMots[i]
     return motATrouver
 
-
+#2
+# Une fonction qui cherche une lettre dans un mot et renvoie sa position.
 def chercheDansMot(mot, lettreCherchee):
     for i in range(len(mot)):
         if lettreCherchee == mot[i]:
-            position = i+1
+            position = i
     return position
 
-
+#3
+# Une fonction qui compte le nombre de fois qu'une lettre donnée apparaît dans un mot.
 def nombreFoisDansMot(mot, lettreCherchee):
     apparition = 0
     for i in range(len(mot)):
@@ -20,7 +24,8 @@ def nombreFoisDansMot(mot, lettreCherchee):
             apparition = apparition+1
     return apparition
 
-
+#4
+# Une fonction qui prend le mot deviné.
 def devineMot():
     guess = "guess"
     while len(guess) != 6:
@@ -31,9 +36,34 @@ def devineMot():
             print("Votre mot fait moins de 6 lettres.")
     return guess
 
+#5
+# Une fonction qui check si 2 lettres sont pareilles
+
+def checkSiPareil(a, b):
+    if a == b:
+        return True
+    return False
+
+
+#6
+# Une fonction qui affiche une ligne dde Motus
+
+def affLigne(motATrouver, guess):
+    for i in range(len(guess)):
+        print (Back.BLACK + "|", end=" ")
+        if checkSiPareil(motATrouver[i], guess[i]):
+            print(Fore.WHITE + Back.RED + guess[i], end=" ")
+        else:
+            print(Back.BLACK + guess[i], end=" ")
+    print (Back.BLACK + "|")
+    return
+
 #MAIN PROGRAMME
-#def 1
 import random
+from colorama import init 
+init()
+from colorama import Fore, Back, Style
+#def 1
 tableauMots = ["puzzle", "action", "nymphe", "wapiti", "alcool", "aqueux", "bambou", "cactus", "chacal", "exquis"]
 #def 2
 mot = input("choisissez un mot : ")

@@ -63,11 +63,15 @@ import random
 from colorama import init 
 init()
 from colorama import Fore, Back, Style
-#def 1
+
 tableauMots = ["puzzle", "action", "nymphe", "wapiti", "alcool", "aqueux", "bambou", "cactus", "chacal", "exquis"]
-#def 2
-mot = input("choisissez un mot : ")
-lettreCherchee = input("choisissez une lettre à rechercher : ")
-#def 3
-mot = input("choisissez un mot : ")
-lettreCherchee = input("choisissez une lettre à rechercher : ")
+motATrouver = motAuHasard (tableauMots)
+tour = 0
+gagne = False
+
+print("Bienvenue dans ce Motus! Un mot de 6 lettres à été choisit au hasard parmis une liste, à vous de le deviner !")
+while tour <= 8 and gagne = False:
+    print("il vous reste", 8 - tour," essaies")
+    tour += 1
+    guess = devineMot()
+    affLigne(motATrouver, guess)

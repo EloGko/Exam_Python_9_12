@@ -8,17 +8,28 @@ def motAuHasard (tableauMots):
 print(motAuHasard(tableauMots))
 input()
 
+
 def chercheDansMot(mot, lettreCherchee):
     for i in range(len(mot)):
         if lettreCherchee == mot[i]:
             position = i+1
     return position
 
+
+def nombreFoisDansMot(mot, lettreCherchee):
+    apparition = 0
+    for i in range(len(mot)):
+        if lettreCherchee == mot[i]:
+            apparition = apparition+1
+    return apparition
+
 #MAIN PROGRAMME
 #def 1
 import random
 tableauMots = ["puzzle", "action", "nymphe", "wapiti", "alcool", "aqueux", "bambou", "cactus", "chacal", "exquis"]
-#def2
+#def 2
 mot = input("choisissez un mot : ")
 lettreCherchee = input("choisissez une lettre à rechercher : ")
-
+#def 3
+mot = input("choisissez un mot : ")
+lettreCherchee = input("choisissez une lettre à rechercher : ")

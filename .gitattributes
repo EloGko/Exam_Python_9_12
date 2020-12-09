@@ -1,2 +1,14 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# FONCTIONS
+
+def motAuHasard (tableauMots):
+    i = random.randint(0,9)
+    motATrouver = tableauMots[i]
+    return motATrouver
+
+print(motAuHasard(tableauMots))
+input()
+
+#MAIN PROGRAMME
+
+import random
+tableauMots = ["puzzle", "action", "nymphe", "wapiti", "alcool", "aqueux", "bambou", "cactus", "chacal", "exquis"]
